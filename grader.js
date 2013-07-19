@@ -78,12 +78,16 @@ if(require.main == module) {
           console.log('Wrote tmp file');
         });
       });
+      
+     function checkFile(file) {
+      var checkJson = checkHtmlFile('tmphtml.html', program.checks);
+      var outJson = JSON.stringify(checkJson, null, 4);
+      console.log(outJson);    
+      fs.unlink('tmphtml.html');
+     }
 
-   // var checkJson = checkHtmlFile('tmphtml.html', program.checks);
-   // var outJson = JSON.stringify(checkJson, null, 4);
-   // console.log(outJson);    
-   // fs.unlink('tmphtml.html');
-
+    setTimeout(checkFile('tmphtml.html'), 3000);
+    
     } else {
     var checkJson = checkHtmlFile(program.file, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
