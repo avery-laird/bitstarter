@@ -335,6 +335,17 @@
 
 </script>
 
+<script>
+
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+    }, 500);
+    return false;
+});
+
+</script>
+
    </head>
   <body>
 
@@ -402,7 +413,7 @@
           </div>
         </div>
         <div class="item active">
-          <img src="http://i.imgur.com/wtnt9Pi.jpg" alt="">
+          <img src="http://www.limitless-citadel-6707.herokuapp.com/IMG_0153.JPG" alt="">
           <div class="container">
             <div class="carousel-caption">
               <h1>Visual art with LEDs.</h1>
@@ -504,7 +515,7 @@
 <!-- GALLERY HEADING -->
 <!-- ================================= -->
 
-<a id="gallery"><hr></a>
+<a name="gallery" id="gallery"><hr></a>
 
  <div class="row-fluid heading">
         <div class="span12">
